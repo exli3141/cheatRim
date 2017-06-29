@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RecipeDefs>
+
+  <!-- natural -->
+
+  <RecipeDef ParentName="SurgeryFlesh">
+    <defName>InstallHeartofRimworld</defName>
+    <label>install the heart of rimworld</label>
+    <description>rimworldの心臓を移植します。</description>
+    <workerClass>Recipe_InstallNaturalBodyPart</workerClass>
+    <jobString>Rimworldの心臓移植</jobString>
+    <workAmount>20000</workAmount>
+    <ingredients>
+			<li>
+				<filter>
+					<categories>
+						<li>Medicine</li>
+					</categories>
+				</filter>
+				<count>1</count>
+			</li>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Th_HeartofRimworld</li>
+					</thingDefs>
+				</filter>
+				<count>1</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+      <categories>
+        <li>Medicine</li>
+      </categories>
+			<thingDefs>
+				<li>Th_HeartofRimworld</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<appliedOnFixedBodyParts>
+			<li>Heart</li>
+		</appliedOnFixedBodyParts>
+		<addsHediff>He_HeartofRimworld</addsHediff>
+	</RecipeDef>
+</RecipeDefs>

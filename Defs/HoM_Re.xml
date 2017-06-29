@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- 強化チート状態変化HediffDef -->
+  <HediffDef>
+	<!-- とりあえず単体定義ならdefName必須よ。ラベルはより中二っぽく？ -->
+	<defName>HoM_ReInforcement</defName>
+	<label>状態変化:強化</label>
+
+	<!-- 基本的な状態変化ならHediffWithCompでいろいろ持ってこれる -->
+	<hediffClass>HediffWithComps</hediffClass>
+	<!-- 下ので黄色っぽい色でテキスト表示される -->
+	<defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
+	<!-- この下のを定義するとシナリオエディタ上で入れられる。 -->
+    <scenarioCanAdd>true</scenarioCanAdd>
+     <comps>
+	<!--
+	 VerbGiverを定義すると素手の攻撃手段をカスタマイズできる。
+	 仕様上追加できるのは近接攻撃のみだが、
+	 射撃武器を持った状態で殴る場合に適応できる。
+	defaultCooldownTime弄ると超攻撃速度で殴れる。
+	とりあえずダメージは通らせられる程度に適当でいい。DLLでヒットする場所を弄らない限り、
+	大ダメージでも何度か殴る必要がある。 
+	DLL抜きで即死攻撃するには、相手の意識をゼロにする状態変化を引き起こす
+	DamageDefを定義すればいい。
+	-->
+      <li Class="HediffCompProperties_VerbGiver">
+        <verbs>
+          <li>
+        <verbClass>Verb_MeleeAttack</verbClass>
+        <defaultCooldownTime>2.0</defaultCooldownTime>
+        <meleeDamageBaseAmount>17</meleeDamageBaseAmount>
+        <meleeDamageDef>Scratch</meleeDamageDef>
+          </li>
+        </verbs>  
+      </li>
+    </comps>
+    <stages>
+	<li>
+	<!-- メインディッシュその1。各臓器の機能と効率を高めることができる。
+	capacityで強化部位を、
+	offsetで比率を入れる。1より大きくすれば強化。
+	なおConsciousnessのsetMaxを0にすると即死状態変化になる。
+	この値はどんな生物の部位にも左右されない値なので。
+	BloodPumpやBloodFilterlingやなんかを0にしてもよい。
+	 -->
+	<capMods>
+	<li></li>
+	</capMods>
+	<!-- メインディッシュその2。各種強化はこのstatOffsets内に定義する。
+	上の強化だけでは賄えないものもあるのでぬかりなく。
+	ただ理論上設定可能でも、Rimworld内で正常稼働しない値もある。 -->
+	<statOffsets>
+	</statOffsets>
+	</li>
+    </stages>
+	<!-- 下ふたつを定義しないと悪いものと判断してしまう -->
+ </HediffDef>
+ </Defs>

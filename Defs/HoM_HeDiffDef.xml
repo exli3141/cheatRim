@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <!-- 強化チートボディパーツ埋め込みタイプHediffDef -->
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>He_HeartofRimworld</defName>
+    <label>The Heart of Rimworld</label>
+    <spawnThingOnRemoved>Th_HeartofRimworld</spawnThingOnRemoved>
+    <comps>
+      <li Class="HediffCompProperties_VerbGiver">
+        <verbs>
+          <li>
+	        <verbClass>Verb_Shoot</verbClass>
+	        <defaultCooldownTime>1.26</defaultCooldownTime>
+	        <hasStandardCommand>true</hasStandardCommand>
+	        <projectileDef>HoM_Bullet_BoltActionRifle</projectileDef>
+	        <warmupTime>1.9</warmupTime>
+	        <range>37</range>
+	        <soundCast>ShotBoltActionRifle</soundCast>
+	        <soundCastTail>GunTail_Heavy</soundCastTail>
+	        <muzzleFlashScale>9</muzzleFlashScale>
+          </li>
+        </verbs>  
+      </li>
+    </comps>
+    <addedPartProps>
+      <isBionic>true</isBionic>
+      <isSolid>true</isSolid>
+      <partEfficiency>1.4</partEfficiency>
+    </addedPartProps>
+  </HediffDef>
+  
+
+</Defs>
